@@ -1,0 +1,29 @@
+$body-bg: #f3f3f3;
+$blue:    red;
+
+$navbar-light-color:                rgba(#3A3A3A, 1);
+$navbar-light-hover-color:          rgba(#3A3A3A, .7);
+$navbar-light-active-color:         rgba(#3A3A3A, .9);
+
+$spacer: 1rem;
+$spacers: ();
+// stylelint-disable-next-line scss/dollar-variable-default
+$spacers: map-merge(
+  (
+    0: 0,
+    1: ($spacer * .25),
+    2: ($spacer * .5),
+    3: $spacer,
+    4: ($spacer * 1.5),
+    5: ($spacer * 2),
+    6: ($spacer * 2.5),
+    7: ($spacer * 3),
+  ),
+  $spacers
+);
+
+$display1-size:               6rem ;
+$display2-size:               4rem ;
+
+$display1-weight:             900 ;
+$display2-weight:             600 ;

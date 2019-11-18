@@ -1,0 +1,232 @@
+@import 'base/functions';
+@import 'base/mixins';
+@import 'custom';
+@import 'bootstrap';
+@import 'base/font-size';
+
+
+.navbar-top{
+    .navbar-brand{
+        width: 70px;
+        height: 70px;
+        background-color: red;
+        border-radius: 50%;
+        @extend .border-bottom;
+        
+        
+    // @include media-breakpoint-up(md) {
+    //     background-color: green;
+    // }
+    }
+    .nav-link:hover{
+        @extend .border-bottom;
+        @extend .border-danger;
+    }
+}
+.in_social{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    display: inline-block;
+    &.in_social_viber {
+        background-color: #6F1FC9;
+    }
+    &.in_social_whatsup {
+        background-color: #25AF45;
+    }
+}
+
+.in_main_banner_p{
+    font-size: 68px;
+    font-weight: 700;
+    color: #fff;
+}
+.in_main_banner_h2{
+    font-size: 133px;
+    font-weight: 900;
+    color: red;
+}
+
+.in_main{
+    background-color: #25AF45;
+    color:#fff;
+}
+
+.in_products{
+    background-color: red;
+    color:#fff;
+}
+
+.in_gayane{
+    background-color: blue;
+    color:#fff;
+}
+
+.in_heading{
+    font-size: 35px;
+    font-weight: 500;
+    letter-spacing: 28.45px;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 46px;
+}
+
+.in_paper{
+    border-radius: 50px;
+    background-color: #fff;
+    box-shadow: -2px 7px 20px #0000002E;
+    padding: 36px;
+    h3{
+        font-size: 39px;
+        font-weight: 600;
+        line-height: 53px;
+        color: #000;
+        margin-bottom: 24px;
+    }
+    p{
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 36px;
+        color: #000;
+    }
+}
+
+.in_steps{
+    .col-lg-2{
+        @include media-breakpoint-up(lg) {
+            flex: 0 0 20%;
+            max-width: 20%;  
+        }
+        &:last-child{
+            .in_step_item_number{
+                &:before{
+                    background: #fff;
+                }
+            }
+            
+        }
+    }
+}
+
+.in_step_item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .in_step_item_number{
+        width: 34px;
+        height: 34px;
+        background-color: #fff;
+        border: 3px solid red;
+        line-height: 28px;
+        text-align: center;
+        border-radius: 50%;
+        font-size: 20px;
+        font-weight: 500;
+        color: #000;
+        margin-bottom: 45px;
+        position: relative;
+        
+        &::before{
+            content: '';
+            display: none;
+            position: absolute;
+            height: 3px;
+            background-color: red;
+            width: 300px;
+            top: 12px;
+            left: 31px;
+            @include media-breakpoint-up(lg) {
+                display: block;
+            }
+        }
+    }
+    .in_step_item_image{
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        margin-bottom: 45px;
+    }
+    .in_step_item_text{
+        font-size: 21px;
+        font-weight: 500;
+        color: #000;
+    }
+}
+
+//reviews
+.in_reviews_item{
+    background-color: #fff;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow:0px 3px 6px #0000007A;
+    .in_reviews_item_image{
+        background-color: #999;
+        height: 100px;
+    }
+    .in_reviews_item_desc{
+        padding: 24px;
+    }
+    h4{
+        font-size: 18px;
+        font-weight: 700;
+        color: #000;
+        margin-bottom: 20px;
+    }
+    p{
+        font-size: 16px;
+        font-weight: 200;
+        line-height: 18px;
+        color: #000;
+    }
+}
+
+.in_reviews{
+    position: relative;
+    .owl-stage-outer{
+        padding: 10px 0;
+    }
+    .in_paper{
+        position: relative;
+        padding: 100px;
+    }
+    .in_reviews_nav {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+        button{
+            appearance: none;
+            width: 62px;
+            height: 62px;
+            border-radius: 50%;
+            background-color: #fff;
+            color: #898989;
+            border: 0;
+            outline: 0;
+            box-shadow: 0px 3px 6px #00000029;
+            font-size: 30px;
+        }
+    }
+}
+
+.in_footer{
+    .in_footer_image{
+        background-color: #6F1FC9;
+        height: 400px;
+    }
+    .in_footer_desc{
+        background-color: #fff;
+        border-radius: 50px;
+        height: 400px;
+        padding: 36px;
+        box-shadow: 3px 0px 15px #00000029;
+    }
+}
+
+
