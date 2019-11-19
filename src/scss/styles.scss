@@ -9,14 +9,8 @@
     .navbar-brand{
         width: 70px;
         height: 70px;
-        background-color: red;
-        border-radius: 50%;
-        @extend .border-bottom;
-        
-        
-    // @include media-breakpoint-up(md) {
-    //     background-color: green;
-    // }
+        background-image:url(../../assets/img/logo.svg);
+        background-repeat: no-repeat;
     }
     .nav-link:hover{
         @extend .border-bottom;
@@ -146,8 +140,22 @@
     .in_step_item_image{
         width: 100px;
         height: 100px;
-        background-color: red;
         margin-bottom: 45px;
+        &.in_step_item_image_1{
+            background-image: url(../../assets/img/icons/10.svg);
+        }
+        &.in_step_item_image_2{
+            background-image: url(../../assets/img/icons/11.svg);
+        }
+        &.in_step_item_image_3{
+            background-image: url(../../assets/img/icons/12.svg);
+        }
+        &.in_step_item_image_4{
+            background-image: url(../../assets/img/icons/2.svg);
+        }
+        &.in_step_item_image_5{
+            background-image: url(../../assets/img/icons/1.svg);
+        }
     }
     .in_step_item_text{
         font-size: 21px;
@@ -185,12 +193,24 @@
 
 .in_reviews{
     position: relative;
+    .owl-item{
+        transition: all 0.2s;
+    }
+    .owl-item.center{
+        transform: scale(1.1) translate3d(0,0,0) !important;
+    }
+    .owl-stage{
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+    }
     .owl-stage-outer{
         padding: 10px 0;
     }
     .in_paper{
         position: relative;
         padding: 100px;
+        overflow: hidden;
     }
     .in_reviews_nav {
         position: absolute;
@@ -227,6 +247,95 @@
         padding: 36px;
         box-shadow: 3px 0px 15px #00000029;
     }
+    .in_call_ico{
+        width: 55px;
+        height: 55px;
+        background-color: green;
+        margin-right: 80px;
+        flex-shrink: 0;
+    }
+    p{
+        font-size: 21px;
+        font-weight: 700;
+        color: #000;
+        line-height: 25px;
+        flex-grow: 1;
+        min-width: 1px;
+    }
+    .btn{
+        height: 66px;
+        width: 100%;
+        border-radius: 11px;
+        font-size: 33px;
+    }
 }
 
 
+.in_product_item{
+    background-color: #fff;
+    border-radius: 27px;
+    padding: 30px;
+    display: flex;
+    .in_product_item_l{
+        .in_product_item_image{
+            width: 110px;
+            height: 110px;
+            margin-bottom: 30px;
+            &.in_product_item_image_wl{
+                background-image: url(../../assets/img/icons/3.svg);
+            }
+            &.in_product_item_image_wg{
+                background-image: url(../../assets/img/icons/4.svg);
+            }
+            &.in_product_item_image_sn{
+                background-image: url(../../assets/img/icons/5.svg);
+            }
+            &.in_product_item_image_hn{
+                background-image: url(../../assets/img/icons/6.svg);
+            }
+            &.in_product_item_image_sf{
+                background-image: url(../../assets/img/icons/8.svg);
+            }
+            &.in_product_item_image_dt{
+                background-image: url(../../assets/img/icons/7.svg);
+            }
+            &.in_product_item_image_call{
+                background-image: url(../../assets/img/icons/9.svg);
+            }
+        }
+        .in_product_item_price{
+            color: #000;
+            
+            span{
+                font-size: 11px;
+                font-weight: 500;
+                line-height: 14px;
+                display: block;
+            }
+            strong{
+                font-size: 17px;
+                font-weight: 700;
+                line-height: 20px;
+                display: block;
+            }
+
+        }
+    }
+    .in_product_item_r{
+        color: #000;
+        margin-left: 40px;
+        h4{
+            font-size: 21px;
+            font-weight: 900;
+            line-height: 25px;
+            margin-bottom: 20px;
+            height: 50px;
+        }
+        p{
+            font-size: 10px;
+            font-weight: 200;
+            height: 138px;
+            overflow: hidden;
+        }
+    }
+}
