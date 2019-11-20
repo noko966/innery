@@ -20,7 +20,7 @@
 <body>
   <!-- navigation -->
   <nav class="navbar navbar-top navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand mr-2 mr-md-7" href="#"></a>
+    <div class="navbar-brand mr-2 mr-md-7"></div>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,9 +29,9 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item"><a class="nav-link" href="#">Steps</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Reviews</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Result</a></li>
+        <li class="nav-item"><a class="nav-link" href="#1">Steps</a></li>
+        <li class="nav-item"><a class="nav-link" href="#2">Reviews</a></li>
+        <li class="nav-item"><a class="nav-link" href="#3">Result</a></li>
       </ul>
       <div class="d-flex align-items-center">
         <button class="btn btn-primary mr-2">+374 44 89 98 89</button>
@@ -54,7 +54,7 @@
   </div>
 
   <!-- products -->
-  <div class="in_products py-4">
+  <div id="1" class="in_products page-section py-4">
     <h2 class="in_heading">Products</h2>
     <div class="container">
       <div class="row justify-content-center">
@@ -197,7 +197,7 @@
     </div>
   </div>
 
-  <div class="in_steps py-5">
+  <div id="2" class="in_steps page-section py-5">
     <div class="container">
       <div class="in_paper">
         <h2 class="in_heading">Steps</h2>
@@ -243,7 +243,7 @@
   </div>
 
 
-  <div class="in_gayane py-5">
+  <div id="3" class="in_gayane page-section py-5">
     <div class="container">
       <div class="row">
         <div class="col-12 col-md-6 col-lg-4">
@@ -333,9 +333,12 @@
 
 
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-  </script>
+  
+</body>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
     integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
   </script>
@@ -343,11 +346,51 @@
     integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
   </script>
   <script src="./assets/js/owl.carousel.min.js"></script>
+  
+
+
+
+  <script>
+    $(document).ready(function() {
+		$('a[href*="#"]').bind('click', function(e) {
+				e.preventDefault(); // prevent hard jump, the default behavior
+
+				var target = $(this).attr("href"); // Set the target as variable
+
+				// perform animated scrolling by getting top-position of target-element and set it as scroll target
+				$('html, body').stop().animate({
+						scrollTop: $(target).offset().top
+				}, 600, function() {
+						location.hash = target; //attach the hash (#jumptarget) to the pageurl
+				});
+
+				return false;
+		});
+});
+
+$(window).scroll(function() {
+		var scrollDistance = $(window).scrollTop();
+
+		// Show/hide menu on scroll
+		//if (scrollDistance >= 850) {
+		//		$('nav').fadeIn("fast");
+		//} else {
+		//		$('nav').fadeOut("fast");
+		//}
+	
+		// Assign active class to nav links while scolling
+		$('.page-section').each(function(i) {
+				if ($(this).position().top <= scrollDistance) {
+						$('.navbar-nav a.active').removeClass('active');
+						$('.navbar-nav a').eq(i).addClass('active');
+				}
+		});
+}).scroll();
+  </script>
 
   <script>
     $(document).ready(function () {
       $('.owl-carousel').owlCarousel({
-
         margin: 50,
         nav: true,
         center: true,
@@ -367,6 +410,5 @@
       })
     });
   </script>
-</body>
 
 </html>
